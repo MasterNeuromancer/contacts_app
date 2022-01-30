@@ -1,5 +1,5 @@
-import 'package:contacts_app/home.dart';
-import 'package:contacts_app/signUpForm.dart';
+import 'package:contacts_app/contactList.dart';
+import 'package:contacts_app/newContactForm.dart';
 import 'package:flutter/material.dart';
 
 void main() {
