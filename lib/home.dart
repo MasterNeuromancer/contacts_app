@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
 
-class ContactForm extends StatefulWidget {
-  const ContactForm({Key? key, required this.title}) : super(key: key);
+class ContactList extends StatefulWidget {
+  const ContactList({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<ContactForm> createState() => _ContactFormState();
+  State<ContactList> createState() => _ContactListState();
 }
 
-class _ContactFormState extends State<ContactForm> {
+class _ContactListState extends State<ContactList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Text(
-          'Center of the app',
-        ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const Card(
+            child: Text('hello world'),
+          );
+        },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("/AddNewContact");
+        },
+        tooltip: 'Add new Contact',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

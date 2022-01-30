@@ -1,4 +1,5 @@
 import 'package:contacts_app/home.dart';
+import 'package:contacts_app/signUpForm.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ContactForm(title: 'Contacts App'),
+      home: const ContactList(title: 'Contacts App'),
+      routes: <String, WidgetBuilder>{
+        "/AddNewContact": (BuildContext context) => const ContactForm(
+              title: 'Contacts App',
+            ),
+        //add more routes here
+      },
     );
   }
 }
